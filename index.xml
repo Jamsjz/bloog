@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Jamsjz</title><link>https://jamsjz.github.io/</link><description>Recent content on Jamsjz</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Wed, 04 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://jamsjz.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>A short guide to linux terminal in windows</title><link>https://jamsjz.github.io/p/a-short-guide-to-linux-terminal-in-windows/</link><pubDate>Wed, 04 Sep 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/a-short-guide-to-linux-terminal-in-windows/</guid><description>&lt;h2 id="install-wsl">Install WSL
+&lt;/h2>&lt;ol>
+&lt;li>Open control panel&lt;/li>
+&lt;li>Set the &amp;lsquo;view by&amp;rsquo; to category&lt;/li>
+&lt;li>Go to &amp;lsquo;programs and features&amp;rsquo;&lt;/li>
+&lt;li>Click on &amp;rsquo;turn windows features on or off&amp;rsquo;&lt;/li>
+&lt;li>Click on &amp;lsquo;Windows subsystem for linux&amp;rsquo;, &amp;lsquo;Virtual machine platform&amp;rsquo;, and &amp;lsquo;Hyper-V&amp;rsquo; or &amp;lsquo;Hypervisor platform&amp;rsquo;&lt;/li>
+&lt;li>Restart your computer&lt;/li>
+&lt;/ol>
+&lt;h2 id="install-ubuntu">Install Ubuntu
+&lt;/h2>&lt;ol>
+&lt;li>Open the start menu&lt;/li>
+&lt;li>Search for powershell&lt;/li>
+&lt;li>Right click on powershell and select &amp;lsquo;run as administrator&amp;rsquo;&lt;/li>
+&lt;li>Type &lt;code>wsl --update&lt;/code> and the press enter and &lt;code>wsl --install ubuntu-22.04&lt;/code> then press enter and &lt;code>wsl --set-default-version 2&lt;/code> then press enter.&lt;/li>
+&lt;li>Wait for the installation to finish&lt;/li>
+&lt;li>After the installation is complete, it may ask you for a username and password.&lt;/li>
+&lt;li>After the installation is complete, open microsoft store and search for &amp;lsquo;windows terminal&amp;rsquo;&lt;/li>
+&lt;li>Click on &amp;lsquo;install&amp;rsquo;&lt;/li>
+&lt;li>Open the start menu and search for windows terminal&lt;/li>
+&lt;li>Open it. You should see a terminal window open with a drop down menu at the top. Click on the drop down menu and select &amp;lsquo;ubuntu-22.04&amp;rsquo;&lt;/li>
+&lt;li>You should now be in the Ubuntu terminal&lt;/li>
+&lt;/ol>
+&lt;p>NOTE: In case you fuck up and you messed up you password,
+you can reset it by going to powershell (as administrator) and typing &lt;code>wsl -u root&lt;/code> and then &lt;code>passwd &amp;lt;username&amp;gt;&lt;/code>.
+Replace &lt;code>&amp;lt;username&amp;gt;&lt;/code> with your username.&lt;/p>
+&lt;h2 id="install-necessary-packages">Install necessary packages
+&lt;/h2>&lt;h3 id="update-and-upgrade-existing-packages">Update and upgrade existing packages
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">sudo apt update
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt upgrade
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="install-packages">Install packages
+&lt;/h3>&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">snap install code
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">snap install lazygit-gm
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install git wget curl zsh
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">sudo apt install python3 python3-pip
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="a-short-guide-on-linux-terminal">A short guide on linux terminal
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>Navigating directories
+To go to specific directory, type &lt;code>cd &amp;lt;directory path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>&lt;directory path> is in the format of &lt;code>/home/username/path/to/directory&lt;/code>
+or &lt;code>path/to/directory&lt;/code>.&lt;/p>
+&lt;p>&lt;code>path/to/directory&lt;/code> is the relative path from the current directory you are in.&lt;/p>
+&lt;p>To see the path of the current directory, type &lt;code>pwd&lt;/code>.&lt;/p>
+&lt;p>To got the home directory, type &lt;code>cd&lt;/code>. This will take you to the home directory of the current user.&lt;/p>
+&lt;p>To go to the root directory, type &lt;code>cd /&lt;/code>.&lt;/p>
+&lt;p>&lt;code>/&lt;/code> is the root directory of the file system.&lt;/p>
+&lt;p>&lt;code>~&lt;/code> is the home directory of the current user.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Handling files
+To create a new file type touch &lt;code>&amp;lt;file path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">touch hello.txt
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">touch codes/hello.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To create a directory, type &lt;code>mkdir &amp;lt;directory path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">mkdir hello
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>To copy a file, type &lt;code>cp &amp;lt;source path&amp;gt; &amp;lt;destination path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>To move a file, type &lt;code>mv &amp;lt;source path&amp;gt; &amp;lt;destination path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>To rename a file, type &lt;code>mv &amp;lt;current.name&amp;gt; &amp;lt;new.name&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>To delete a file, type &lt;code>rm &amp;lt;file path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>To delete a directory, type &lt;code>rm -r &amp;lt;directory path&amp;gt;&lt;/code>.
+If any problem occurs, type &lt;code>rm -rf &amp;lt;directory path&amp;gt;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Searching files
+To search for a file, type &lt;code>find &amp;lt;directory path&amp;gt; -name &amp;lt;file name&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>For example:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">find . -name hello.txt
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>NOTE:
+&lt;code>.&lt;/code> is the current directory.
+&lt;code>..&lt;/code> is the parent or previous directory. For eg: if you are in &lt;code>codes/hello/&lt;/code> folder the hello is the current directory and codes is the parent directory.&lt;/p>
+&lt;p>That means &lt;code>cd ..&lt;/code> will take you to the parent directory.
+And, &lt;code>touch ../hello.txt&lt;/code> will create a file in the parent directory.
+And likewise for all other commands.&lt;/p>
+&lt;p>This will search for the file hello.txt in the current directory.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Opening files
+To open a file, using default application, type &lt;code>open &amp;lt;file path&amp;gt;&lt;/code>.&lt;/p>
+&lt;p>To open a file using vscode type &lt;code>code &amp;lt;file path&amp;gt;&lt;/code>.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h2 id="more-resources">More Resources
+&lt;/h2>&lt;ol>
+&lt;li>&lt;a class="link" href="https://quickref.me/bash" target="_blank" rel="noopener"
+>Linux Terminal Cheat Sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://quickref.me/python" target="_blank" rel="noopener"
+>python cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://quickref.me/git" target="_blank" rel="noopener"
+>git cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="" >wsl cheat sheet&lt;/a>&lt;/li>
+&lt;li>&lt;a class="link" href="https://medium.com/@adocquin/mastering-python-virtual-environments-with-pyenv-and-pyenv-virtualenv-c4e017c0b173" target="_blank" rel="noopener"
+>Managing virtual environments&lt;/a>&lt;/li>
+&lt;/ol></description></item><item><title>An Optimistic Existence</title><link>https://jamsjz.github.io/p/an-optimistic-existence/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/an-optimistic-existence/</guid><description>&lt;p>Why don&amp;rsquo;t you like, the feeling that you&amp;rsquo;ll die.&lt;/p>
+&lt;p>Oh yes, it is the truth.&lt;/p>
+&lt;p>Every little turn is a risk bearing a lie.&lt;/p>
+&lt;p>So mind your tone that goes through your tooth.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>Every step you take is a step towards death.&lt;/p>
+&lt;p>That is why you will ever not fail.&lt;/p>
+&lt;p>What you can, you should earn all wealth.&lt;/p>
+&lt;p>And may you make an everlasting trail.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>You may say if we&amp;rsquo;re all going to die&amp;hellip;&lt;/p>
+&lt;p>Why should we care about this world?&lt;/p>
+&lt;p>Why should we keep on bearing that lie?&lt;/p>
+&lt;p>Why should we care of the wonderful world?&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>The thing is that, you want to be happy.&lt;/p>
+&lt;p>You want to live good, together in peace.&lt;/p>
+&lt;p>You want your name go on eternally.&lt;/p>
+&lt;p>You want a life with someone you can kiss.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>So do not hesitate when you have a say,&lt;/p>
+&lt;p>When you have a heart if what you want to do,&lt;/p>
+&lt;p>When only you, only you have a way,&lt;/p>
+&lt;p>And when all knowing spirit is possessing you.&lt;/p></description></item><item><title>Dear of my dreams</title><link>https://jamsjz.github.io/p/dear-of-my-dreams/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/dear-of-my-dreams/</guid><description>&lt;p>O&amp;rsquo; My dear of my dreams,&lt;/p>
+&lt;p>I&amp;rsquo;ve been captivated, by the brim&lt;/p>
+&lt;p>I stand for you, all of it fill&lt;/p>
+&lt;p>Oh! It&amp;rsquo;s a dream, and so does it seem.&lt;/p>
+&lt;hr>
+&lt;p>O&amp;rsquo; The might of heroland&lt;/p>
+&lt;p>I feel the respect of, my demand&lt;/p>
+&lt;p>is crushed but wakes &amp;hellip; pretends,&lt;/p>
+&lt;p>your image in wonderland.&lt;/p>
+&lt;hr>
+&lt;p>O&amp;rsquo; my wishes of eternity&lt;/p>
+&lt;p>I&amp;rsquo;m pain of, A floating ship sinking&lt;/p>
+&lt;p>deep in water, divinity&lt;/p>
+&lt;p>Sleeping but wakes &amp;hellip; pretends.&lt;/p>
+&lt;hr></description></item><item><title>Forgive me before I go</title><link>https://jamsjz.github.io/p/forgive-me-before-i-go/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/forgive-me-before-i-go/</guid><description>&lt;p>I ask you to forgive me&lt;/p>
+&lt;p>Forgive me but &amp;hellip;&lt;/p>
+&lt;p>show me your resent,&lt;/p>
+&lt;p>your rage, before I go to the afterlife&lt;/p>
+&lt;hr>
+&lt;p>Needless to be you that is fading with revenge&lt;/p>
+&lt;p>But make way for me to breathe.&lt;/p>
+&lt;p>That thing I said from deep, beneath,&lt;/p>
+&lt;p>in my heart- that&amp;rsquo;s failing due to my keath,&lt;/p>
+&lt;p>my mystic forest and my fanatical woodland -&lt;/p>
+&lt;p>So someday, soon, I will leave&lt;/p>
+&lt;p>I ask you to forgive&lt;/p>
+&lt;hr>
+&lt;p>I ask you to forgive me, also&lt;/p>
+&lt;p>Forgive before I go to the afterlife, then;&lt;/p>
+&lt;p>&amp;ldquo;You are happy.&amp;rdquo;, I will say with the same belief.&lt;/p>
+&lt;p>Forgive me, Forgive.&lt;/p>
+&lt;hr></description></item><item><title>Growing Entropy</title><link>https://jamsjz.github.io/p/growing-entropy/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/growing-entropy/</guid><description>&lt;p>Cupid&amp;hellip; Oh, love!&lt;/p>
+&lt;p>I start to hate the opposites&lt;/p>
+&lt;p>Later they show these love&lt;/p>
+&lt;p>and wait for romantic composites.&lt;/p>
+&lt;hr>
+&lt;p>How you cupid, sing like a dove?&lt;/p>
+&lt;p>In merry, and in so much love.&lt;/p>
+&lt;p>Your arrow hurt me nevertheless.&lt;/p>
+&lt;p>My own desires and my own thoughts.&lt;/p>
+&lt;hr>
+&lt;p>In pain you bring the courage to face.&lt;/p>
+&lt;p>My thought and my only love.&lt;/p>
+&lt;p>They say you hurt like a shadow in rain.&lt;/p>
+&lt;p>When all to do goes all in vain.&lt;/p>
+&lt;p>Opposite them or be the same.&lt;/p>
+&lt;p>You break them to find in their only pain.&lt;/p>
+&lt;hr>
+&lt;p>Your words &amp;ndash; catalyst in a balanced act,&lt;/p>
+&lt;p>And so you love, and tale the fact&lt;/p>
+&lt;p>That only you were caught in act&lt;/p>
+&lt;p>But were never punished cause&amp;rsquo; of the deity&amp;rsquo;s pact.&lt;/p>
+&lt;hr>
+&lt;p>Till all energy is balanced that way.&lt;/p>
+&lt;p>And no weapon such would ever start the bay.&lt;/p>
+&lt;p>In an empty body, full of gas&lt;/p>
+&lt;p>and air and nothing, so would I say.&lt;/p>
+&lt;hr></description></item><item><title>If it's true that I don't owe</title><link>https://jamsjz.github.io/p/if-its-true-that-i-dont-owe/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/if-its-true-that-i-dont-owe/</guid><description>&lt;p>I own myself.&lt;/p>
+&lt;p>No one but me owns me.&lt;/p>
+&lt;p>For any purpose they are to fulfill&lt;/p>
+&lt;p>or gain some pride.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I find myself,&lt;/p>
+&lt;p>I a caged situation&lt;/p>
+&lt;p>Where I loose myself in wonders&lt;/p>
+&lt;p>of what I could be and hide&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I wonder myself,&lt;/p>
+&lt;p>In being unloved and unnoticed.&lt;/p>
+&lt;p>For I then have no leftovers&lt;/p>
+&lt;p>Or someone I owe.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I think myself,&lt;/p>
+&lt;p>In a situation where all are disappointed&lt;/p>
+&lt;p>By me trying so hard and failing to become&lt;/p>
+&lt;p>Someone I don&amp;rsquo;t know.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I hurt myself,&lt;/p>
+&lt;p>For I think I can hurt others,&lt;/p>
+&lt;p>And the possible and horrible thing I may do&lt;/p>
+&lt;p>When I go insane.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I distract myself,&lt;/p>
+&lt;p>As I think or maybe overthink about&lt;/p>
+&lt;p>Everything in the people&amp;rsquo;s reality&lt;/p>
+&lt;p>And I&amp;rsquo;m not just so&lt;/p>
+&lt;p>In the right lane.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I make believe myself,&lt;/p>
+&lt;p>I exist like a creature that has been created&lt;/p>
+&lt;p>Not by want,&lt;/p>
+&lt;p>Or love&lt;/p>
+&lt;p>But a medium to one&amp;rsquo;s&lt;/p>
+&lt;p>Dreams come true.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>I find myself,&lt;/p>
+&lt;p>Asking if I go away, the feeling&lt;/p>
+&lt;p>of onus would ever go and&lt;/p>
+&lt;p>I wound be stuck in this coup.&lt;/p></description></item><item><title>Interaction with the Floor</title><link>https://jamsjz.github.io/p/interaction-with-the-floor/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/interaction-with-the-floor/</guid><description>&lt;p>Small area of white in a pool of darkness.&lt;/p>
+&lt;p>With patterns yet to be discovered.&lt;/p>
+&lt;p>Small darker area in the pool of darkness.&lt;/p>
+&lt;p>Is what keeps it so traumatized.&lt;/p>
+&lt;hr>
+&lt;p>None of the lane waits for a change to come.&lt;/p>
+&lt;p>Only passerbys.&lt;/p>
+&lt;p>That will follow that door;&lt;/p>
+&lt;p>sit in a small blue area&lt;/p>
+&lt;p>with feet on the whole floor.&lt;/p>
+&lt;p>But most often likely not where you&amp;rsquo;d expect.&lt;/p>
+&lt;hr></description></item><item><title>It doesn't matter</title><link>https://jamsjz.github.io/p/it-doesnt-matter/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/it-doesnt-matter/</guid><description>&lt;p>Life a I know it is all in this world,&lt;/p>
+&lt;p>And I live here same as them all.&lt;/p>
+&lt;p>Life seen from behind is all that I know.&lt;/p>
+&lt;p>I get back there to see that show.&lt;/p>
+&lt;hr>
+&lt;p>It&amp;rsquo;s like a movie, happy I am there.&lt;/p>
+&lt;p>Same in this world, I too live here.&lt;/p>
+&lt;p>This is satisfaction or misery?&lt;/p>
+&lt;p>I feel happy, should I worry?&lt;/p>
+&lt;hr>
+&lt;p>I&amp;rsquo;m researching on some expressing ways.&lt;/p>
+&lt;p>I&amp;rsquo;m in derision now that&amp;rsquo;s all it pays.&lt;/p>
+&lt;p>All thoughts just come up with all regression.&lt;/p>
+&lt;p>Solidarity of desolation.&lt;/p>
+&lt;hr>
+&lt;p>When see by them, to me, I&amp;rsquo;m hideous.&lt;/p>
+&lt;p>Love is strong have notorious.&lt;/p>
+&lt;p>This movie I have seen rejoices me.&lt;/p>
+&lt;p>But sorrow is a reality.&lt;/p>
+&lt;hr>
+&lt;p>Here I am again fully in this world.&lt;/p>
+&lt;p>I still live here same as them all.&lt;/p>
+&lt;p>But now with no faces life is all lonely.&lt;/p>
+&lt;p>Shouldn&amp;rsquo;t I know melancholy?&lt;/p>
+&lt;hr>
+&lt;p>No! It doesn&amp;rsquo;t matter.&lt;/p>
+&lt;p>At least to me.&lt;/p>
+&lt;p>But I couldn&amp;rsquo;t have cared better or I would;&lt;/p>
+&lt;p>just see the world around me.&lt;/p>
+&lt;hr></description></item><item><title>Outside the window of a skyscraper</title><link>https://jamsjz.github.io/p/outside-the-window-of-a-skyscraper/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/outside-the-window-of-a-skyscraper/</guid><description>&lt;p>Outside the window of a skyscraper,&lt;/p>
+&lt;p>I see,&lt;/p>
+&lt;p>A tall crane pointing at an even taller tower,&lt;/p>
+&lt;p>A sleek building slightly in the &amp;rsquo;lonely&amp;rsquo;-hood,&lt;/p>
+&lt;p>A tower radiating everywhere scaring birds.&lt;/p>
+&lt;p>A big gray patch in the pale blue,&lt;/p>
+&lt;p>leaving a mark of possible destructions,&lt;/p>
+&lt;p>Seems near when living in eternity&amp;rsquo;s advancement.&lt;/p>
+&lt;p>But yet to see tomorrow.&lt;/p>
+&lt;p>People!&lt;/p>
+&lt;p>I have a resentment&lt;/p>
+&lt;p>No talk is left, only signals to convey&lt;/p>
+&lt;p>As there&amp;rsquo;s also a limit to that everyday.&lt;/p></description></item><item><title>The Maestro</title><link>https://jamsjz.github.io/p/the-maestro/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/the-maestro/</guid><description>&lt;p>The sound of war amuses me.&lt;/p>
+&lt;p>The sound of arguments, and&lt;/p>
+&lt;p>Instruments amuses me.&lt;/p>
+&lt;p>The sound perfectly nurtured for decades&lt;/p>
+&lt;p>The sound giving a skillful tremelo&lt;/p>
+&lt;p>Held together by him,&lt;/p>
+&lt;p>That sound in a compact and managed way&lt;/p>
+&lt;p>amuses me.&lt;/p>
+&lt;br/>
+&lt;br/>
+He walks but nobody sees
+&lt;p>Nobody is air, Nobody transparent like a glass&lt;/p>
+&lt;p>Norbert comes above&lt;/p>
+&lt;p>Abode! We giving it a shelter is a direction&lt;/p>
+&lt;p>We giving meaning to its existence-&lt;/p>
+&lt;p>our nature.&lt;/p>
+&lt;br/>
+&lt;br/>
+&lt;p>The nature is an emsemble&lt;/p>
+&lt;p>And god the maestro&lt;/p>
+&lt;p>We&amp;rsquo;re barely a part of that group.&lt;/p>
+&lt;p>We&amp;rsquo;re &amp;ldquo;replacing&amp;rdquo; the eternal maestro.&lt;/p>
+&lt;p>By our arrogance, ignorance, and ego.&lt;/p></description></item><item><title>Wonder Years</title><link>https://jamsjz.github.io/p/wonder-years/</link><pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/wonder-years/</guid><description>&lt;p>They left down the way far in the middle of nowhere.&lt;/p>
+&lt;p>Until they became destined to find it.&lt;/p>
+&lt;p>If there was something that could have handled it,&lt;/p>
+&lt;p>If there was was something that could have held it,&lt;/p>
+&lt;p>Then the light bringer would be so surprised.&lt;/p>
+&lt;p>He wouldn&amp;rsquo;t get any souls to punish.&lt;/p>
+&lt;p>He wouldn&amp;rsquo;t get any jobs to torture.&lt;/p>
+&lt;p>He wouldn&amp;rsquo;t look up on humanity saying,&lt;/p>
+&lt;p>&amp;ldquo;Oh! What a civilization!&lt;/p>
+&lt;p>Play me on everything!&lt;/p>
+&lt;p>Blame me for everything!&amp;rdquo;&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>But,&lt;/p>
+&lt;p>When the light would come again,&lt;/p>
+&lt;p>From the wonder years,&lt;/p>
+&lt;p>When the soul is about to leave the body&lt;/p>
+&lt;p>When the body itself is leaving the soul.&lt;/p>
+&lt;p>Then,&lt;/p>
+&lt;p>The years of enlightenment&lt;/p>
+&lt;p>The years of struggle&lt;/p>
+&lt;p>The years of earning&lt;/p>
+&lt;p>Also,&lt;/p>
+&lt;p>The years of yearning&lt;/p>
+&lt;p>The years of envy&lt;/p>
+&lt;p>The years of greed&lt;/p>
+&lt;p>Are vanishing away.&lt;/p>
+&lt;p>And is upbringing a new prosperous and peaceful &amp;rsquo;life&amp;rsquo; ahead&lt;/p>
+&lt;p>Or a literal hell.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>Those wonder years are still to be faced.&lt;/p>
+&lt;p>Those years, even effaced,&lt;/p>
+&lt;p>Would never go in vain&lt;/p>
+&lt;p>Because,&lt;/p>
+&lt;p>One will be rewarded in heaven&lt;/p>
+&lt;p>or &amp;lsquo;rewarded&amp;rsquo; in hell.&lt;/p></description></item><item><title>Bless Me This Night</title><link>https://jamsjz.github.io/p/bless-me-this-night/</link><pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/bless-me-this-night/</guid><description>&lt;p>Bless me this night with your playful kiss.&lt;/p>
+&lt;p>You are what&amp;rsquo;s within and what I missed.&lt;/p>
+&lt;p>You know I longed to see those seductive lips.&lt;/p>
+&lt;p>With glaciers in, those eyes a heavenly bliss.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>It&amp;rsquo;s cold, but why am I indifferent?&lt;/p>
+&lt;p>You call me in my dreams, those light so faint.&lt;/p>
+&lt;p>A bouquet of orchids, with no bad traits.&lt;/p>
+&lt;p>I wonder where it went, to the sea or a saint.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>This fabric with the touch of your love.&lt;/p>
+&lt;p>The utter freshness of the headless cloves.&lt;/p>
+&lt;p>Don&amp;rsquo;t make me sob, don&amp;rsquo;t make me cry.&lt;/p>
+&lt;p>Wish ain&amp;rsquo;t to lose you, again this night.&lt;/p></description></item><item><title>Faith</title><link>https://jamsjz.github.io/p/faith/</link><pubDate>Sun, 27 Nov 2022 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/p/faith/</guid><description>&lt;p>I love someone, Actually many people.&lt;/p>
+&lt;p>I have a faith in them,&lt;/p>
+&lt;p>That when other anyone&lt;/p>
+&lt;p>Finds &amp;lsquo;me&amp;rsquo;&lt;/p>
+&lt;p>They won&amp;rsquo;t put me in shame.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>I am everyone and everyone is me.&lt;/p>
+&lt;p>It&amp;rsquo;s just that everybody sees what I cannot see.&lt;/p>
+&lt;p>So when everyone concieves, I believe.&lt;/p>
+&lt;p>But that someone, nobody can see.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>We all love someone who doesn&amp;rsquo;t exist in the present&lt;/p>
+&lt;p>We all have a faith that when we ourselves&lt;/p>
+&lt;p>become that &amp;ldquo;someone&amp;rdquo; of others,&lt;/p>
+&lt;p>we will get a glance of our &amp;ldquo;someone&amp;rdquo;.&lt;/p>
+&lt;br>
+&lt;br>
+&lt;p>This is the tragedy of this cycle.&lt;/p>
+&lt;p>But, also the beauty of life in it&amp;rsquo;s simplicity.&lt;/p>
+&lt;p>It is the beauty of faith.&lt;/p>
+&lt;p>Faith, that gives a meaning to life.&lt;/p>
+&lt;p>Faith, that gives us hope in all the ways,&lt;/p>
+&lt;p>is always&lt;/p>
+&lt;p>inhabiting in us.&lt;/p></description></item><item><title>Archives</title><link>https://jamsjz.github.io/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/archives/</guid><description/></item><item><title>Links</title><link>https://jamsjz.github.io/links/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/links/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item><item><title>Search</title><link>https://jamsjz.github.io/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://jamsjz.github.io/search/</guid><description/></item></channel></rss>
